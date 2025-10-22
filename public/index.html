@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 32px; background:#f7fafc; color:#0f172a; }
+    form { max-width:700px; margin:0 auto; background:white; padding:20px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.08); }
+    .row { display:flex; gap:12px; }
+    .field { margin-bottom:14px; }
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input, select, textarea { width:100%; padding:10px 12px; border:1px solid #e6e9ef; border-radius:8px; font-size:14px; }
+    .small { max-width:220px; }
+    .controls { display:flex; gap:10px; align-items:center; margin-top:8px; }
+    button { padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; }
+    button[type="submit"] { background:#0ea5a4; color:white; }
+    button[type="reset"] { background:#e2e8f0; }
+    pre { background:#0f172a; color:#e6fffa; padding:12px; border-radius:8px; overflow:auto; }
+  </style>
+</head>
+<body>
+   
+<form action="/submit" method="post">
+    <h2>Contact & Profile</h2>
+
+    <div class="field">
+      <label for="fullName">Full name</label>
+      <input id="fullName" name="fullName" type="text" required minlength="2" placeholder="Jane Doe" />
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" />
+      </div>
+
+      <div class="field small">
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" min="13" max="120" placeholder="30" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required minlength="6" placeholder="Choose a strong password" />
+    </div>
+
+    <div class="field">
+      <label for="bio">Short bio</label>
+      <textarea id="bio" name="bio" rows="4" maxlength="300" placeholder="Tell us a bit about yourself..."></textarea>
+    </div>
+
+    <div class="row">
+      <div class="field small">
+        <label for="role">Role</label>
+        <select id="role" name="role" required>
+          <option value="">Select...</option>
+          <option>Designer</option>
+          <option>Developer</option>
+          <option>Product</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field small">
+        <label for="startDate">Start date</label>
+        <input id="startDate" name="startDate" type="date" />
+      </div>
+    </div>
+
+    <fieldset style="border:0; padding:0; margin:0 0 14px 0;">
+      <legend style="font-weight:600; margin-bottom:8px;">Preferences</legend>
+      <label><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label><br />
+      <label><input type="radio" name="contactMethod" value="email" checked /> Email</label>
+      <label style="margin-left:8px;"><input type="radio" name="contactMethod" value="phone" /> Phone</label>
+    </fieldset>
+
+    <div class="field">
+      <label for="avatar">Avatar (optional)</label>
+      <input id="avatar" name="avatar" type="file" accept="image/*" />
+    </div>
+
+    <div class="controls">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+
+</body>
+</html>
